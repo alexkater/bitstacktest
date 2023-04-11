@@ -54,9 +54,13 @@ class HomePage extends StatelessWidget {
         children: [
           const Image(image: AssetImage('assets/images/bitcoin_error.jpg')),
           const Spacer(),
-          Text(
-            'Error: ${state.errorMessage}',
-            style: const TextStyle(fontSize: 24),
+          Container(
+            margin: const EdgeInsets.all(16),
+            child: Text(
+              'Error: ${state.errorMessage}',
+              style: const TextStyle(fontSize: 24),
+              textAlign: TextAlign.center,
+            ),
           ),
           const Spacer(),
           TextButton(

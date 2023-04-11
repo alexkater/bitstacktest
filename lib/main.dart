@@ -1,4 +1,3 @@
-import 'package:bitstack/bloc/home_event.dart';
 import 'package:bitstack/screens/home_page.dart';
 import 'package:bitstack/services/api_service.dart';
 import 'package:flutter/material.dart';
@@ -21,7 +20,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(primarySwatch: Colors.blue, fontFamily: 'Inter'),
       home: BlocProvider(
         create: (context) =>
-            HomeBloc(ApiService(http.Client()))..add(FetchData()),
+            HomeBloc(ApiService(http.Client())), // ..add(FetchData()),
         child: const HomePage(),
       ),
     );
