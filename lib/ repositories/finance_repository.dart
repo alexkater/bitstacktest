@@ -22,6 +22,7 @@ class FinanceRepository {
     }
 
     Price apiPrice = await _apiService.getPrice();
+    _dbService.save(apiPrice.toJson(), DBKey.price);
     yield apiPrice;
   }
 
@@ -36,6 +37,7 @@ class FinanceRepository {
     }
 
     Balance apiBalance = await _apiService.getBalance();
+    _dbService.save(apiBalance.toJson(), DBKey.balance);
     yield apiBalance;
   }
 }
